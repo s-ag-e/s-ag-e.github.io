@@ -1,0 +1,50 @@
+<html>
+
+	<head>
+
+		<title>Random Prnt.sc</title>
+        <link rel="stylesheet" href="prntsc.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="description" content="A Project that i made for fun that generates random screenshots from prnt.sc.">
+
+		<script>
+			function openInNewTab(url) {
+			  var win = window.open(url, '_blank');
+			  win.focus();
+			}
+
+			function openRandomImages() {
+					openInNewTab(generateURL());
+            }
+
+			function generateURL() {
+				return "https://prnt.sc/" + makeId();
+			}
+
+			function makeId() {
+			   var result = '';
+			   var characters  = 'abcdefghijklmnopqrstuvwxyz0123456789';
+			   var charactersLength = characters.length;
+			   for ( var i = 0; i < 6; i++ ) {
+			      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+			   }
+			   return result;
+			}
+		</script>
+	</head>
+
+	<body>
+        <div class="container">
+            <h1 style="text-align: top;">Random Screenshot</h1>
+            <p>Lightshot is a screenshot utility that allows you to quickly customise screenshots, and upload them to the internet. 
+                <br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                These images can be found on the site - <a href="prnt.sc">prnt.sc</a>, and they're publically available.</p>
+            <br>
+            <p>All of this is PUBLIC info so im not doing anything bad :))</p>
+            <button onclick="openRandomImages()" class="btn" id="btn">Get Prntsc Screenshot</button>
+        </div>
+
+	</body>
+</html>
+
